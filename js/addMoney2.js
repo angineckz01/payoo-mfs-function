@@ -4,6 +4,14 @@ document.getElementById('button-add-money').addEventListener('click', function(e
     const pin = inputValueById('input-pin');
     // console.log('input er result holo', addMoney, pin);
 
+
+    
+
+    // check wheather user input number or not
+    if(isNaN(addMoney)){
+        alert('Failed to Add Money');
+        return;
+    }
     if(pin === 1234){
         const balance = textValueById('account-balance');
         const updateBalance = balance + addMoney;

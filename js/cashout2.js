@@ -2,6 +2,15 @@ document.getElementById('button-cash-out').addEventListener('click', function(ev
     event.preventDefault();
     const inputCashoutMoney = inputValueById('input-cash-out-money');
     const inputCashoutPin = inputValueById('input-cash-out-pin');
+
+
+
+    
+    // check wheather user input number or not
+    if(isNaN(inputCashoutMoney)){
+        alert('Failed to Cash Out');
+        return;
+    }
     if(inputCashoutPin === 1234){
         const balance = textValueById('account-balance');
         const updateBalance = balance - inputCashoutMoney;
