@@ -5,11 +5,11 @@ document.getElementById('button-add-money').addEventListener('click', function(e
     // console.log('input er result holo', addMoney, pin);
 
 
-    
+
 
     // check wheather user input number or not
     if(isNaN(addMoney)){
-        alert('Failed to Add Money');
+        alert('Failed to Add Money. Please provide right information.');
         return;
     }
     if(pin === 1234){

@@ -5,7 +5,7 @@ document.getElementById('button-cash-out').addEventListener('click', function(ev
 
 
 
-    
+
     // check wheather user input number or not
     if(isNaN(inputCashoutMoney)){
         alert('Failed to Cash Out');
@@ -13,6 +13,14 @@ document.getElementById('button-cash-out').addEventListener('click', function(ev
     }
     if(inputCashoutPin === 1234){
         const balance = textValueById('account-balance');
+
+
+
+        // conditionally cashout balance
+        if(inputCashoutMoney > balance){
+            alert('You have insufficient money to Cash Out');
+            return;
+        }
         const updateBalance = balance - inputCashoutMoney;
         // update the new balance
         document.getElementById('account-balance').innerText = updateBalance;
